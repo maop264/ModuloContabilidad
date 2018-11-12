@@ -34,6 +34,8 @@ namespace ModuloContabilidad.Models
 
         public int IdCliente { get; set; }
 
+        public string Concepto { get; set; }
+
         public virtual Cliente Cliente { get; set; }
 
         public virtual TipoRegistro TipoRegistro { get; set; }

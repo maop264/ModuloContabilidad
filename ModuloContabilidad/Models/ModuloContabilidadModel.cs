@@ -59,6 +59,10 @@ namespace ModuloContabilidad.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Registro>()
+                .Property(e => e.Concepto)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Registro>()
                 .HasMany(e => e.RegistroXProductos)
                 .WithRequired(e => e.Registro)
                 .WillCascadeOnDelete(false);
