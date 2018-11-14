@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ModuloContabilidad.Models
+﻿namespace ModuloContabilidad.Models
 {
+    using System;
+
     public class DatoReporte
     {
         public int IdCliente { get; set; }
@@ -19,12 +16,12 @@ namespace ModuloContabilidad.Models
         public int TotalFactura { get; set; }
         public string TipoRegistro { get; set; }
         public string Concepto { get; set; }
-        public int Cantidad { get; set; }
-        public int Total { get; set; }
+        public int? Cantidad { get; set; }
+        public int? Total { get; set; }
         public string NombreProducto { get; set; }
         public string CodReferencia { get; set; }
         public string Descripcion { get; set; }
-        public int ValorUnitario { get; set; }
-        public int IVAProducto { get; set; }
+        public int? ValorUnitario { get; set; }
+        public int? IVAProducto { get; set; }
     }
 }

@@ -1,0 +1,64 @@
+﻿@model ModuloContabilidad.Models.Producto
+
+@{
+    ViewBag.Title = "Eliminar Producto";
+}
+
+<h2>Eliminar Producto</h2>
+<p></p>
+<h3>Estás seguro que desea eliminar este producto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            Código de Referencia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodReferencia)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            Valor Unitario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorUnitario)
+        </dd>
+
+        <dt>
+            % IVA
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IVA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index")
+        </div>
+    }
+</div>
