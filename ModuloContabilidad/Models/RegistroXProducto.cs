@@ -33,4 +33,17 @@ namespace ModuloContabilidad.Models
 
         public virtual Registro Registro { get; set; }
     }
+
+    public partial class RegistroXProductoViewModel
+    {
+        public int IdProducto { get; set; }
+        public string ProductoNombre { get; set; }
+        public int Cantidad { get; set; }
+        public int PrecioUnitario { get; set; }
+        public bool Retirar { get; set; }
+        public int Total()
+        {
+            return Cantidad * PrecioUnitario;
+        }
+    }
 }
