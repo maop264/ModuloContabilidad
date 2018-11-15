@@ -1,9 +1,6 @@
 namespace ModuloContabilidad.Models
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class ModuloContabilidadModel : DbContext
     {
@@ -56,6 +53,10 @@ namespace ModuloContabilidad.Models
 
             modelBuilder.Entity<Registro>()
                 .Property(e => e.NumeroFactura)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Registro>()
+                .Property(e => e.Concepto)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Registro>()

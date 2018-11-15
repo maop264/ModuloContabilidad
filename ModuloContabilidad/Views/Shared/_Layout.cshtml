@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/masterstyle.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -24,19 +25,25 @@
             <div class="collapse navbar-collapse" id="Menu">
                 <ul class="navbar-nav mr-auto ml-auto">
                     <li class="dropdown nav-item active">
-                        <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                            @Html.ActionLink("Clientes", "Index", "Clientes", new { area = "" }, new { @class = "navbar-brand" })
-                        </a>
+                        @Html.ActionLink("Clientes", "Index", "Clientes", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li>
+                        <hr />
                     </li>
                     <li class="dropdown nav-item active">
-                        <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                            @Html.ActionLink("Productos", "Index", "Productos", new { area = "" }, new { @class = "navbar-brand" })
-                        </a>
+                        @Html.ActionLink("Productos", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li>
+                        <hr />
                     </li>
                     <li class="dropdown nav-item active">
-                        <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                            @Html.ActionLink("Resgistros", "Index", "Registros", new { area = "" }, new { @class = "navbar-brand" })
-                        </a>
+                        @Html.ActionLink("Registros", "Index", "Registros", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li>
+                        <hr />
+                    </li>
+                    <li class="dropdown nav-item active">
+                        @Html.ActionLink("Reportes", "Index", "Reportes", new { area = "" }, new { @class = "nav-link" })
                     </li>
                 </ul>
             </div>
@@ -44,7 +51,7 @@
     </div>
 
     <div class="container body-content">
-        <p /><hr />
+        <p />
         @RenderBody()
     </div>
 

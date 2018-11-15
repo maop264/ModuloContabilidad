@@ -1,11 +1,11 @@
 ﻿@model ModuloContabilidad.Models.Cliente
 
 @{
-    ViewBag.Title = "Eliminar CLiente";
+    ViewBag.Title = "Eliminar Cliente";
 }
 
-<h2>Eliminar CLiente</h2>
-
+<h2>Eliminar Cliente</h2>
+<p></p>
 <h3>Estás seguro que desea eliminar este cliente?</h3>
 <div>
     <hr />
@@ -36,7 +36,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

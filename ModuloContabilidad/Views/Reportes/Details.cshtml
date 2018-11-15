@@ -1,0 +1,170 @@
+﻿@model List<ModuloContabilidad.Models.DatoReporte>
+
+@{
+    ViewBag.Title = "Detalles del Registro";
+}
+
+<h2>Detalles del Registro</h2>
+<h4 style="color:slategrey">
+    Datos de la Factura
+</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Fecha Registro
+            </th>
+            <th>
+                Número de Factura
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model[0].FechaRegistro.ToShortDateString()
+            </td>
+            <td>
+                @Model[0].NumeroFactura
+            </td>
+        </tr>
+    </table>
+</div>
+<h4 style="color:slategrey">
+    Datos del Cliente
+</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Identificación
+            </th>
+            <th>
+                Nombre Cliente
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Dirección
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model[0].IdCliente
+            </td>
+            <td>
+                @Model[0].NombreCliente
+            </td>
+            <td>
+                @Model[0].Telefono
+            </td>
+            <td>
+                @Model[0].Direccion
+            </td>
+        </tr>
+    </table>
+</div>
+@if (Model[0].Concepto == null)
+{
+    <h4 style="color:slategrey">
+        Lista de Productos
+    </h4>
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    Código Ref
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Valor Unitario
+                </th>
+                <th>
+                    IVA
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.CodReferencia
+                    </td>
+                    <td>
+                        @item.NombreProducto
+                    </td>
+                    <td>
+                        @item.Descripcion
+                    </td>
+                    <td>
+                        @item.Cantidad
+                    </td>
+                    <td>
+                        @item.ValorUnitario
+                    </td>
+                    <td>
+                        @item.IVAProducto
+                    </td>
+                    <td>
+                        @item.Total
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+else
+{
+    <h4 style="color:slategrey">
+        Concepto
+    </h4>
+    <div>
+        <table class="table">
+            <th>
+                @Model[0].Concepto
+            </th>
+        </table>
+    </div>
+}
+
+<h4 style="color:slategrey">
+    Totales de Factura
+</h4>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Sub Total
+            </th>
+            <th>
+                IVA
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model[0].SubTotal
+            </td>
+            <td>
+                @Model[0].IVAFactura
+            </td>
+            <td>
+                @Model[0].TotalFactura
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Regresar a la Lista", "Index")
+</p>

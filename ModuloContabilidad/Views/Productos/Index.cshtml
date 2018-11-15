@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ModuloContabilidad.Models.Producto>
+
+@{
+    ViewBag.Title = "Productos";
+}
+
+<h2>Productos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Código de Referencia
+        </th>
+        <th>
+            Descripción
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodReferencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdProducto }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdProducto }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdProducto })
+            </td>
+        </tr>
+    }
+
+</table>
